@@ -1,3 +1,9 @@
+a{
+    text-decoration:none;
+}
+.topBar a:hover{
+    background: navajowhite;
+}
 .topBar{
     width: 100%;
     background-color: antiquewhite;
@@ -5,10 +11,14 @@
     top:0px;
     left: 0px;
     z-index: 9999;
+    border-bottom: 1px solid white;
 }
 .siteLogo{
     float: left;
     margin-right: 5px;
+    height: 100%;
+}
+.topBar  span{
 }
 #searchBarInputText{
     width: 75%;
@@ -17,6 +27,7 @@
 .topSiteHeader{
     width: 50%;
     margin: auto;
+    height: 100%;
 }
 .textComment{
     height:100px;

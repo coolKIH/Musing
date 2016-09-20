@@ -6,7 +6,7 @@
  * Time: 7:04 PM
  */
 DEFINE ('DB_USER','yourusername');
-DEFINE ('DB_PWD','youruserpassword');
+DEFINE ('DB_PWD','youruserpwd');
 DEFINE('DB_HOST','localhost');
 DEFINE('DB_NAME','WebDb');
 

@@ -13,7 +13,7 @@ if(isset($_GET['opr'])&&$_GET['opr']=='logout'){
     unset($_SESSION['user']);
 }
 if(isset($_GET['opr'])&&$_GET['opr']=='login'){
-    $_SESSION['user']='小明';
+    $_SESSION['user']='Yellow Hao';
 }
 include("includes/headerChooser.php");
 require_once('classes/Post.php');
@@ -22,7 +22,7 @@ require_once($includesDir . '/mysqli_connect.php');
 $thisPostId=$_GET["id"];
 if(!isset($thisPostId))$thisPostId=$_POST["id"];
 if(!isset($thisPostId)){
-    $q = "select * from Post";
+    $q = "select * from Post ORDER BY p_id DESC ";
     $r = mysqli_query($dbc, $q);
     while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
         $post = new Post($dbc, $row["p_id"]);
