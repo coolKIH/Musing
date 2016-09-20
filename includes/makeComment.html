@@ -1,0 +1,7 @@
+<form class="discussForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <div class="makeCommentArea">
+        <div><textarea name="commentContent" class="textComment" required="required"></textarea></div>
+        <input class="submitBtn" type="submit" name="submit"/>
+        <input type="hidden" name="id" value="<?php echo $thisPostId;?>"/>
+    </div>
+</form>

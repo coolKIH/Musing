@@ -1,0 +1,7 @@
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <div class="makeCommentArea">
+        <div><textarea class="textComment" disabled="disabled">Please log in to add your words!</textarea></div>
+        <input class="submitBtn" type="submit" name="submit" disabled="disabled"/>
+        <input type="hidden" name="id" value="<?php echo $thisPostId;?>"/>
+    </div>
+</form>
