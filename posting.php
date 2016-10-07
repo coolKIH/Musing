@@ -11,7 +11,6 @@ session_start();
 
 include ("includes/headerChooser.php");
 if(!isset($_SESSION['user'])){
-    require_once ("includes/tools.php");
     echo '<p class="redirectIndicator">Please log in. Redirecting to login page in <span id="counter">3</span> seconds</p>
     <script src="includes/js/redirecting.js" type="text/javascript"></script> ';
     //Header("Refresh:2;url=".absolute_url());

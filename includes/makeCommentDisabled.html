@@ -1,7 +1,6 @@
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-    <div class="makeCommentArea">
-        <div><textarea class="textComment" disabled="disabled">Please log in to add your words!</textarea></div>
-        <input class="submitBtn" type="submit" name="submit" disabled="disabled"/>
-        <input type="hidden" name="id" value="<?php echo $thisPostId;?>"/>
-    </div>
+<div class="makeCommentArea">
+    <div><textarea name="commentContent" class="textComment" disabled placeholder="请登录后评论"></textarea></div>
+    <p class="disabled-indicator"name="submit">无法参与评论</p>
+</div>
 </form>

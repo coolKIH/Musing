@@ -1,100 +1,332 @@
-a{
-    text-decoration:none;
-}
-.topBar a:hover{
-    background: navajowhite;
-}
-.topBar{
-    width: 100%;
-    background-color: antiquewhite;
-    position: fixed;
-    top:0px;
-    left: 0px;
-    z-index: 9999;
-    border-bottom: 1px solid white;
-}
-.siteLogo{
-    float: left;
-    margin-right: 5px;
-    height: 100%;
-}
-.topBar  span{
-}
-#searchBarInputText{
-    width: 75%;
-    background-color: antiquewhite;
-}
-.topSiteHeader{
-    width: 50%;
-    margin: auto;
-    height: 100%;
-}
-.textComment{
-    height:100px;
-    width:100%;
-    resize: none;
-}
-.makeCommentArea{
-    width: 100%;
-}
-.othrOpr{
-    position: absolute;
-    right:0px;
-    top:0px;
-}
-.content{
-    margin-top: 28px;
-}
 body{
-    background-color: azure;
+    width: 100%;
+    padding: 0 0;
+    background-color: darkred;
+    margin: 0 auto;
 }
-.submitBtn{
+a{
+    text-decoration: none;
+    color: #000;
+}
+body *{
+    transition: 0.5s background-color;
+}
+div.search-bar{
+    height: 50px;
+    width: 100%;
+    display: none;
+    margin-top: 0;
+    padding: 0 0;
+}
+input[class=search-input]{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 22px;
+}
+.search-input{
+    border: none;
+    margin: 0;
+}
+
+header{
+    /*background-color: #CD5c5c;*/
+    width:100%;
+    margin:0 auto;
+    padding:18px 0;
+    display: block;
+    font-family: "DejaVu Serif",FreeMono;
+    text-align: center;
+    color: gray;
+    border: 0;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+header h1{
+    margin-top: 0;
+    font-size: 2em;
+    font-size: 280%;
+    padding: 10px 0;
+}
+
+
+ul.navbar{
+    padding: 1px 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    list-style: none;
+    background-color: dodgerblue;
+    margin-top: -8px;
+    clear: left;
+    text-transform: uppercase;
+}
+ul.navbar li.logo{
+    float: left;
+}
+ul.navbar a{
+    display: inline-block;
+    padding: 10px 18px;
+    font-family: "Comic Sans MS";
+}
+ul.navbar a.home{
+    background: url('http://i.imgur.com/1CRy2G5.png') no-repeat left center;
+    padding-left: 25px;
+}
+ul.navbar li.new-account,ul.navbar li.login,li.newPostli{
     float: right;
 }
-.discussContent{
-    font-size: medium;
-    border-top: 1px dashed greenyellow;
-}
-.discussArea{
-    margin-top: 50px;
-    width: 50%;
-}
-.postMainArea{
-    width: 50%;
-}
-.writerName{
-    text-align: right;
-    font-size: medium;
-}
-.writerName.indiscuss{
-font-size: small;
-}
-#newAPost{
-    width: 49px;
-    position:fixed;
-    bottom: 2px;
-    right: 2px;
-}
-#newAPost:hover{
-    width: 52px;
-    background-color: darkcyan;
-}
-.newPostArea{
-    width: 50%;
-    height: 100%;
-    margin: auto;
-}
-.newPostTitle{
-    width: 100%;
-    margin-bottom: 8px;
-    border-radius: 5px;
-}
-.newPostContent{
-    width: 100%;
-    height: 500px;
-    resize: none;
-    border-radius: 5px;
-}
-.newPostSubmit{
 
+li.search-icon{
+    float: right;
+}
+button[name=search]{
+    background-color: transparent;
+    border: 0;
+    display: inline-block;
+    padding:10px 20px;
+    font-size: 110%;
+    font-family: "Comic Sans MS";
+}
+
+
+ul.navbar a:hover:hover{
+    color: #FFFE59;
+    background-color: steelblue;
+}
+ul.navbar a{
+    color: #fff;
+}
+
+div.postPreview{
+    max-width: 400px;
+    float: left;
+    overflow: hidden;
+    margin: 5px;
+    min-height: 300px;
+    max-height: 400px;
+    border: 1px solid darkred;
+    padding-top: 0px;
+    font-family: Ubuntu;
+    position: relative;
+}
+div.postPreview:hover{
+    background-color: #FFFE59;
+}
+div.postPreview h3.postTitle{
+    padding: 5px 5px;
+    margin-top: 0;
+    font-size: 150%;
+    color: darkred;
+}
+
+div.postPreview p.postDetail{
+    padding: 5px 10px;
+    font-size: 150%;
+}
+div.postPreview p.writerName,div.postView p.writerName{
+    padding: 5px 10px;
+    background-color: cornflowerblue;
+}
+div.postPreview:hover p.writerName{
+    background-color: #FFFE59;
+}
+div.postView{
+    width: 80%;
+    display: block;
+    margin:0 auto;
+    margin-top: 8px;
+    border-radius: 10px;
+}
+div.postView h3.postTitle{
+    margin-top: 0;
+    color: darkred;
+    text-align: center;
+    font-size: 25px;
+    display: block;
+    margin:0 auto;
+    background-color:cornflowerblue;
+    border-radius: 10px 10px 0 0;
+}
+div.postView pre.postDetail{
+    padding:5px 10px;
+    font-size: 120%;
+    background: #FEFF98;
+    margin-top: 0;
+    min-height: 100px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+div.postView p.writerName{
+    margin-top: 0;
+    color: blanchedalmond;
+    border-radius: 2px;
+    text-align: right;
+    margin: 0 auto;
+}
+div.makeCommentArea{
+    display: block;
+    margin-top: 5px;
+    width: 80%;
+    margin: 0 auto;
+    vertical-align: top;
+}
+textarea[name=commentContent]{
+    border: 2px solid white;
+    resize: none;
+    width: 75%;
+    height: 100px;
+    overflow: auto;
+    background-color: #FFFE59;
+    margin-bottom: 0;
+    float: left;
+}
+textarea[name=commentContent]:focus{
+    border: 0;
+    resize: none;
+    box-shadow: inset 1px 1px 1px 1px lightskyblue;
+
+}
+div.makeCommentArea input.submitBtn{
+    border-radius:5px;
+    border: 2px solid white;
+    padding: 0px 8px;
+    color: burlywood;
+    background-color: red;
+    font-size: 120%;
+    font-family: "Ubuntu Light",Arial;
+    height: 100px;
+    margin-left: 5px;
+    width: 20%;
+}
+div.makeCommentArea input.submitBtn:hover {
+    background-color: darkred;
+    border: 2px solid darkred;
+
+}
+div.discussArea{
+    width: 80%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+div.discussAreaItem{
+    background-color: #FFFE59;
+    display: inline-block;
+    float: left;
+    padding: 0;
+    margin: 5px 5px;
+    border-radius: 5px;
+    min-width: 200px;
+}
+p.writerName.indiscuss{
+    background-color: cornflowerblue;
+    padding: 5px 8px;
+    margin-bottom: 0;
+    border-radius: 5px;
+    text-align: right;
+}
+div.discussAreaItem pre.discussContent{
+    padding: 0 5px;
+}
+p.moredetail{
+    position: absolute;
+    bottom: -18px;
+    background-color: darkred;
+    color: teal;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0px;
+}
+div.postPreview:hover p.moredetail{
+    background-color: limegreen;
+    color: black;
+}
+p.disabled-indicator{
+    background-color: gray;
+    width: 75%;
+    text-align: center;
+    color: white;
+    margin-top: 0;
+    padding: 5px;
+    display: block;
+    clear: left;
+}
+input[name=newPostTitle], textarea[name=newPostContent] {
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 8px 10px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid #DDDDDD;
+}
+
+input[name=newPostTitle]:focus, textarea[name=newPostContent]:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    margin: 5px 1px 3px 0px;
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+div.newPostArea{
+    margin:0 auto;
+    margin:5px 5px 10px 5px;
+    padding: 0 0;
+    display: block;
+    overflow: hidden;
+    background-color: bisque;
+    opacity: 0.8;
+    padding: 10px 12px;
+}
+div.div-newPostTitle{
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+div.div-newPostContent{
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+input[name=newPostTitle]{
+    width: 98%;
+    font-weight: 100;
+    font-size: 110%;
+}
+textarea[name=newPostContent]{
+    width: 98%;
+    resize: none;
+    min-height: 480px;
+    font-size: 110%;
+}
+
+div.newPostArea input.submitBtn{
+    width: 100%;
+    background-color: red;
+    text-align: center;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 0;
+    color: white;
+    margin: 0 auto;
+    font-size: 110%;
+}
+div.newPostArea input.submitBtn:hover{
+    background-color: darkred;
+    color: #FFFE59;
+}
+header h1{
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

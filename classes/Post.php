@@ -41,12 +41,19 @@ class Post
         echo '</p>';
     }
     public function displayWriter(){
-        echo '<p class="writerName">'.$this->getWriter().'</p>';
+        echo '<p class="writerName">By '.$this->getWriter().'</p>';
     }
     public function displayTitleNDetail(){
-        echo '<h3 class="postTitle">'.$this->title.'</h3>';
+        echo '<div class="postView"><h3 class="postTitle">'.$this->title.'</h3>';
         $this->displayWriter();
-        echo '<pre class="postDetail">'.$this->detail.'</pre>';
+        echo '<pre class="postDetail">'.$this->detail.'</pre></div>';
+    }
+    public function displayTitleNDetailForPreview(){
+        echo '<a href="index.php?id='.$this->id.'&title='.$this->title.'"><div class="postPreview"><h3 class="postTitle">'.$this->title.'</h3>';
+        $this->displayWriter();
+        echo '<p class="postDetail">'.$this->detail.'</p>
+        <p class="moredetail">More</p>
+        </div></a>';
     }
     public function setTitle($tt){
         $this->title = $tt;

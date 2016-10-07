@@ -7,17 +7,24 @@
  */
 
 $pageTitle = 'Musing - Sharing your favorite music with the world';
-$includesDir = "includes";
 session_start();
 if(isset($_GET['opr'])&&$_GET['opr']=='logout'){
     unset($_SESSION['user']);
 }
-if(isset($_GET['opr'])&&$_GET['opr']=='login'){
-    $_SESSION['user']='Yellow Hao';
-}
 include("includes/headerChooser.php");
+
+if(isset($_GET['opr'])&&$_GET['opr']=='login'){
+    include ("includes/login.html");
+    include ('includes/footer.html');
+    exit();
+}
+if(isset($_GET['opr'])&&$_GET['opr']=='register'){
+    include ("includes/register.html");
+    include ('includes/footer.html');
+    exit();
+}
 require_once('classes/Post.php');
-require_once($includesDir . '/mysqli_connect.php');
+require_once('includes/mysqli_connect.php');
 
 $thisPostId=$_GET["id"];
 if(!isset($thisPostId))$thisPostId=$_POST["id"];
@@ -26,7 +33,7 @@ if(!isset($thisPostId)){
     $r = mysqli_query($dbc, $q);
     while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
         $post = new Post($dbc, $row["p_id"]);
-        $post->displayTitle();
+        $post->displayTitleNDetailForPreview();
     }
 }else{
     $thisPost = new Post($dbc,$thisPostId);
@@ -37,10 +44,8 @@ if(!isset($thisPostId)){
         $writer=$_SESSION['user'];
         $thisPost->addNewDiscuss($newContent,$writer);
     }
-    echo '<div class="postMainArea">';
     $thisPost->displayTitleNDetail();
     include ("includes/makeCommentAreaChooser.php");
-    echo '</div>';
     $thisPost->displayAllDiscuss();
 }
 

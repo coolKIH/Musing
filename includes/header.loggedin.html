@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title><?php echo $pageTitle ?></title>
-    <link rel="stylesheet" href="includes/styles.css" type="text/css"/>
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon"/>
-    <script src="includes/js/jquery-3.1.0.min.js"></script>
-    <script src="includes/js/areYouSure.js"></script>
-    <script src="includes/js/jquery.are-you-sure.js"></script>
-    <script src="includes/js/ays-beforeunload-shim.js"></script>
-</head>
-<body>
-<div class="topBar">
-    <div class="topSiteHeader">
-        <div class="siteLogo">
-            <a href="index.php"><span>Musing</span></a>
-        </div>
-        <div class="searchBar">
-            <input id="searchBarInputText" type="text" placeholder="Search everything" />
-            <a id="submitSearch" href="#"><span>Search</span></a>
-        </div>
-    </div>
-    <div class="othrOpr">
-        <a href="#">My profile</a>
-        <a href="index.php?opr=logout">Log out</a>
-    </div>
-</div>
-<div class="content">
+<?php include("includes/header.inc.html"); ?>
+<ul class="navbar">
+    <li class="logo"><a class="home" href="index.php">Home</a></li>
+    <li class="newPostli"><a href="posting.php" class="newAPost" title="New Sharing">Blogging</a></li>
+    <li class="login"><a href="index.php?opr=logout">Log out</a> </li>
+    <li class="new-account"><a href="#"><?php echo $_SESSION['user']; ?></a> </li>
+    <li class="search-icon"><a href="#" name="search">Search</a> </li>
+</ul>

@@ -1,0 +1,49 @@
+<script>
+    function do_register(){
+        var username = $("#username").val().trim();
+        var email = $("#email").val().trim();
+        var gender = $('input[name="gender"][checked]').val();
+        var password = $("#password").val().trim();
+        if(username!="" && password!="" && gender!="" && password!=""){
+            $.ajax
+            ({
+                type:"post",
+                url:"includes/register.php",
+                data:{
+                    do_register:"do_register",
+                    username:username,
+                    email:email,
+                    gender:gender,
+                    password:password
+                },
+                success:function(response){
+                    var data = JSON.parse(response);
+                    if(data.result=="success"){
+                        alert("Great! Ready to use!");
+                        window.location.href="index.php?opr=login";
+                    }
+                }
+                    }
+            );
+        }
+        return false;
+    }
+</script>
+
+<div id="register_form">
+    <h2>Create Your Account</h2>
+    <form action="#" onsubmit="return do_register()" method="post">
+        <input type="text" name="username" id="username" placeholder="Your username" autocomplete="off" required/>
+        <br/>
+        <input name="email" type="email" id="email" placeholder="Your E-mail" autocomplete="off" required/>
+        <br/>
+        <input type="radio" name="gender" id="genderm" value="m" checked/>
+        <label for="genderm">Male</label>
+        <input type="radio" name="gender" id="genderf" value="f"/>
+        <label for="genderf">Lady</label>
+        <br/>
+        <input type="password" name="password" id="password" placeholder="Password" autocomplete="off" required/>
+        <br/>
+        <input type="submit" name="regsubmit" value="注册"/>
+    </form>
+</div>

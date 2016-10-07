@@ -1,7 +1,7 @@
 <?php
 if(!isset($_SESSION['user'])) {
-    include($includesDir.'/header.html');
+    include('includes/header.html');
 }else{
-    include ($includesDir.'/header.loggedin.html');
+    include ('includes/header.loggedin.html');
 }
 ?>
