@@ -5,8 +5,8 @@
  * Date: 9/9/16
  * Time: 7:04 PM
  */
-DEFINE ('DB_USER','root');
-DEFINE ('DB_PWD','iwaly');
+DEFINE ('DB_USER','your_db_username');
+DEFINE ('DB_PWD','your_db_pwd');
 DEFINE('DB_HOST','localhost');
 DEFINE('DB_NAME','WebDb');
 
